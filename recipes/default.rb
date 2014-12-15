@@ -3,10 +3,8 @@ include_recipe 'apt'
 case node['platform']
   when "ubuntu"
     apt_repository 'logentries' do
-      uri 'http://rep.logentries.com/'
+      uri 'https://rep.logentries.com/'
       components ['precise', 'main']
-      keyserver 'hkp://pgp.mit.edu:80'
-      key 'C43C79AD'
     end
   when "amazon"
     cookbook_file "logentries.repo" do
